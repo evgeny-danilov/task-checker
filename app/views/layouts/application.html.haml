@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Task Checker
+    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = javascript_importmap_tags
+  %body.bg-light
+    .container.py-5
+
+      .text-center
+        %img.d-block.mx-auto.mb-4{ src: "https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg", alt: "", width: "72", height: "72" }
+        %h2 Task Checker
+        %p.lead
+          Implement your solution and check with autotests
+
+      = yield
