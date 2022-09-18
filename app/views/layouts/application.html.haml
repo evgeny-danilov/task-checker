@@ -8,8 +8,10 @@
     = csp_meta_tag
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
+    = favicon_link_tag asset_path('favicon.png')
   %body.bg-light
     .container.py-5
+      = link_to 'Home', root_url
 
       .text-center
         %img.d-block.mx-auto.mb-4{ src: "https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg", alt: "", width: "72", height: "72" }

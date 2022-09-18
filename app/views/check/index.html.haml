@@ -1,0 +1,7 @@
+.row
+  .col-6
+    %br
+    .list-group.tasks-index
+      - @tasks.each_with_index do |task, index|
+        = link_to check_url(id: task), class: 'list-group-item list-group-item-action' do
+          %h4= "#{index + 1}. #{task.humanize}"

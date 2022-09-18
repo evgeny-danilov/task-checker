@@ -1,6 +1,21 @@
 .row
   .col-6
-    - url = check_show_url
-    = simple_form_for Check.new, url: url, method: :get do |f|
+    - url = evaluate_check_url(id: params[:id])
+    = simple_form_for Check.new, url: url, method: :post do |f|
       = f.input :solution, as: :text, label: 'Solution', input_html: { rows: 10, value: @template }
+
+      - if params[:result] == 'success'
+        .alert.alert-success Tests passed.
+      - if params[:result] == 'failed'
+        .alert.alert-danger
+          Tests failed.
+          %pre= @error_message
+
       = f.button :submit, 'Check', class: 'btn btn-primary mt-4'
+
+  .col-6
+    .form-group
+      .label Test content
+      .form-control
+        %pre
+          = @test_content

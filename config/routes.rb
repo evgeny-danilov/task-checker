@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'check/show'
-  get 'check/check'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root "check#index"
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :check, only: [:index, :show] do
+    member do
+      post :evaluate
+    end
+  end
 end

@@ -1,24 +1,20 @@
-# README
+# TASKS CHECKER
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### General idea
 
-Things you may want to cover:
+This project provides a UI for automatic checks of learning tasks. 
+The repo contains only specs and descriptions of tasks, 
+but not the solution, so as students can't cheating.
 
-* Ruby version
+To add new tasks, add spec file in the folder `lib/checkers/<your_task_name>/`.
+Test file should called `spec.rb`, and basic template for this task called `template.rb`  
 
-* System dependencies
+Note: Currently it's supported only RSpec framework.
 
-* Configuration
+### Further improvements
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- apply hotwire to show details of failed specs (accordion) and keep user's inputs
+- support saving and sharing the result (keep results in DB and generate unique link)
+- support SQL tasks
+- add syntax highlighting
+- improve interface
