@@ -2,12 +2,12 @@ class CheckController < ApplicationController
   CHECKERS_PATH = Rails.root.join('lib/checkers')
 
   def index
-    @tasks = Dir.entries(CHECKERS_PATH).reject { _1.in?(%w[. ..]) }
+    @tasks = Dir.entries(CHECKERS_PATH).reject { _1.start_with?('.') }.sort
   end
 
   def show
     @test_content = File.read(task_path)[/RSpec.+/m]
-    @template = File.read(template_path)
+    @template = params[:template] || File.read(template_path)
     @error_message = params[:error_message]
   end
 
@@ -26,6 +26,7 @@ class CheckController < ApplicationController
 
     redirect_to action: :show,
                 result: test_evaluation.result.zero? ? 'success' : 'failed',
+                template: provided_solution,
                 error_message: error_message&.join('. ').truncate(150)
   end
 
@@ -44,7 +45,7 @@ class CheckController < ApplicationController
   end
 
   def provided_solution
-    stop_list = %w[eval sql send rails config activerecord application env].freeze
+    stop_list = %w[eval sql send rails config env activerecord application controller byebug binding write].freeze
     guard_regexp = Regexp.new(stop_list.join('|'), Regexp::IGNORECASE)
 
     params.dig('check', 'solution').gsub(guard_regexp, '###')

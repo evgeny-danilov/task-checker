@@ -1,0 +1,51 @@
+id,firstname,lastname,email,score,date_of_birth,university
+1,Blake,Shelba,Blake.Shelba@mymail.com,10.81,1991-01-10,American University of Antigua
+2,Fina,Lissi,Fina.Lissi@mymail.com,9.37,1928-10-21,American InterContinental University
+3,Joy,Chem,Joy.Chem@mymail.com,7.36,2018-07-14,American University in Bosnia and Herzegovina
+4,Hildegaard,Serilda,Hildegaard.Serilda@mymail.com,7.24,1952-12-16,The American University in Cairo
+5,Romona,Anton,Romona.Anton@mymail.com,4.79,1944-12-06,American College of Thessaloniki (ACT)
+6,Alyssa,Newell,Alyssa.Newell@mymail.com,4.27,1953-06-16,American University of Nigeria
+7,Ashlee,Ferrell,Ashlee.Ferrell@mymail.com,3.92,2003-05-31,American University of Rome
+8,Melisent,Taam,Melisent.Taam@mymail.com,9.89,2010-07-13,Kean University (Wenzhou campus)
+9,Rosene,Karylin,Rosene.Karylin@mymail.com,9.05,2011-11-11,American University of Antigua
+10,Lizzie,Sprage,Lizzie.Sprage@mymail.com,7.42,1990-08-10,RIT Kosovo / American University in Kosovo
+11,Penelopa,Atcliffe,Penelopa.Atcliffe@mymail.com,10.43,1990-09-03,American University of Paris
+12,Regina,Mallon,Regina.Mallon@mymail.com,2.61,1968-11-25,Central European University
+13,Collen,Tomasina,Collen.Tomasina@mymail.com,9.3,1937-01-30,New York University (Florence campus)
+14,Misha,Yam,Misha.Yam@mymail.com,7.04,1947-06-03,Temple University (Japan campus)
+15,Henriette,Francene,Henriette.Francene@mymail.com,3.47,1943-09-18,University of Utah (Incheon campus)
+16,Janenna,Maurine,Janenna.Maurine@mymail.com,7.23,2001-04-17,Hult International Business School
+17,Marjie,Irmine,Marjie.Irmine@mymail.com,5,1991-08-29,American College of Thessaloniki (ACT)
+18,Andeee,Romelda,Andeee.Romelda@mymail.com,8.38,1962-01-19,American College of Greece
+19,Dawn,Clie,Dawn.Clie@mymail.com,4.23,1947-03-09,The American University in Cairo
+20,Chloris,Silvan,Chloris.Silvan@mymail.com,1.21,2012-06-28,American University of Rome
+21,Neila,Wooster,Neila.Wooster@mymail.com,10.28,1908-04-29,American University in Bulgaria
+22,Carolina,Longfellow,Carolina.Longfellow@mymail.com,8.3,1993-01-14,New York University (Abu Dhabi campus)
+23,Therine,Millda,Therine.Millda@mymail.com,1.07,1918-10-06,American University of Rome
+24,Sheelagh,Susannah,Sheelagh.Susannah@mymail.com,2.32,1970-07-12,McDaniel College Budapest
+25,Nelle,Roche,Nelle.Roche@mymail.com,3.2,1983-05-17,RIT Kosovo / American University in Kosovo
+26,Ardys,Norvol,Ardys.Norvol@mymail.com,2,1944-07-09,Rochester Institute of Technology (Dubai campus)
+27,Vinita,Keily,Vinita.Keily@mymail.com,5.34,1905-09-01,Temple University (Rome campus)
+28,Ariela,Carri,Ariela.Carri@mymail.com,4.91,1934-05-10,University of Maryland Global Campus
+29,Brooks,Randene,Brooks.Randene@mymail.com,4.7,1912-07-22,John Cabot University
+30,Alleen,Reinke,Alleen.Reinke@mymail.com,10.22,1903-06-10,Girne American University
+31,Dode,Decato,Dode.Decato@mymail.com,7.24,1915-04-30,American InterContinental University
+32,Adelle,Cressida,Adelle.Cressida@mymail.com,4.11,1901-06-04,New York University (Abu Dhabi campus)
+33,Elsie,Rudolph,Elsie.Rudolph@mymail.com,5.53,1971-04-10,Hellenic American University
+34,Zondra,Azeria,Zondra.Azeria@mymail.com,4.16,1902-07-30,Lakeland University (Japan campus)
+35,Chrystel,Zola,Chrystel.Zola@mymail.com,6.84,1939-12-03,New York University (Florence campus)
+36,Nollie,Tjon,Nollie.Tjon@mymail.com,8.36,1940-08-15,American University of Antigua
+37,Marylou,Elsinore,Marylou.Elsinore@mymail.com,3.63,1917-10-21,Schiller International University
+38,Dolli,Verger,Dolli.Verger@mymail.com,5.67,2011-12-12,St. John's University (Paris campus)
+39,Sallie,Hedve,Sallie.Hedve@mymail.com,8.13,1959-06-29,American University of Antigua
+40,Yvonne,Bonucci,Yvonne.Bonucci@mymail.com,1.64,1961-03-13,Temple University (Japan campus)
+41,Leanna,Joachim,Leanna.Joachim@mymail.com,10.44,1988-01-22,Webster University Geneva (Geneva campus)
+42,Isa,Duwalt,Isa.Duwalt@mymail.com,1.65,1916-11-21,Temple University (Rome campus)
+43,Consuela,Shanley,Consuela.Shanley@mymail.com,8.42,1921-09-05,American University of Beirut
+44,Kamilah,Ogren,Kamilah.Ogren@mymail.com,4.28,2014-08-04,American College of Thessaloniki (ACT)
+45,Celestyna,Hutchison,Celestyna.Hutchison@mymail.com,9.65,1942-06-04,American University of Armenia
+46,Nita,Franza,Nita.Franza@mymail.com,1.65,1962-01-31,New York University (Buenos Aires campus)
+47,Helena,Millda,Helena.Millda@mymail.com,7.88,1954-08-22,Richmond The American International University in London
+48,Fernande,Heisel,Fernande.Heisel@mymail.com,2.69,1982-09-18,St. John's University (Paris campus)
+49,Feliza,Alexandr,Feliza.Alexandr@mymail.com,1.01,1985-09-24,American College of Greece
+50,Selia,Wolfgram,Selia.Wolfgram@mymail.com,2.01,1970-10-09,American University in Dubai

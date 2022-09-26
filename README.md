@@ -1,5 +1,7 @@
 # TASKS CHECKER
 
+https://ruby-task-checker.herokuapp.com/
+
 ### General idea
 
 This project provides a UI for automatic checks of learning tasks. 
