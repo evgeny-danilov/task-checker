@@ -7,17 +7,12 @@ module Checker
   RSpec.describe CsvParser do
     subject { described_class.new(file_name: file_name) }
 
-
     context 'when process csv file' do
       let(:file_name) { Rails.root.join('lib/checkers/csv_processing/short.csv') }
 
       it 'returns the valid result' do
         expect(subject.call.round(2)).to eq(5.81)
       end
-    end
-
-    context 'when parse 10-megabyte csv file' do
-      let(:file_name) { Rails.root.join('lib/checkers/csv_processing/short.csv') }
 
       it 'works in the most efficient way' do
         RubyProf::FlatPrinter.new(

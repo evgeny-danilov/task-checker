@@ -1,6 +1,6 @@
 - url = evaluate_check_url(id: params[:id])
 = simple_form_for Check.new, url: url, method: :post do |f|
-  = f.input :solution, as: :text, label: 'Solution', input_html: { rows: 10, value: @template }
+  = f.input :solution, as: :text, label: 'Solution', input_html: { rows: 15, value: @template }
 
   - if params[:result] == 'success'
     .alert.alert-success Tests passed.
