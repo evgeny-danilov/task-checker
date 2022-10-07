@@ -1,5 +1,5 @@
 class CheckController < ApplicationController
-  CHECKERS_PATH = Rails.root.join('lib/checkers')
+  CHECKERS_PATH = Rails.root.join('lib/checkers') # TODO: move to global constants
 
   def index
     @tasks = Dir.entries(CHECKERS_PATH).reject { _1.start_with?('.') }.sort
@@ -21,12 +21,12 @@ class CheckController < ApplicationController
     test_evaluation = CheckRunner.call(task_path: task_path)
     Object.send(:remove_const, 'Checker')
 
-    error_message = test_evaluation.outputs.messages
-    error_message ||= test_evaluation.outputs&.examples&.map { _1.exception&.message }
+    error_message = test_evaluation.outputs.messages ||
+                    test_evaluation.outputs&.examples&.map { _1.exception&.message }
 
     redirect_to action: :show,
                 result: test_evaluation.result.zero? ? 'success' : 'failed',
-                template: provided_solution,
+                template: provided_solution.gsub(/File2/, 'File'),
                 error_message: error_message&.join('. ').truncate(150)
   end
 
@@ -45,10 +45,15 @@ class CheckController < ApplicationController
   end
 
   def provided_solution
-    stop_list = %w[eval sql send rails config env activerecord application controller byebug binding write].freeze
-    guard_regexp = Regexp.new(stop_list.join('|'), Regexp::IGNORECASE)
+    stop_list = %w[
+      exec eval send byebug binding pry write IO FileUtils FileTest Dir DIR __ @@
+      Rails config Config ENV ActiveRecord Application Controller
+    ].freeze
+    guard_regexp = Regexp.new(stop_list.join('|'))
 
-    params.dig('check', 'solution').gsub(guard_regexp, '###')
+    params.dig('check', 'solution')
+          .gsub(guard_regexp, '###')
+          .gsub(/File/, 'File2')
   end
 
   class CheckRunner

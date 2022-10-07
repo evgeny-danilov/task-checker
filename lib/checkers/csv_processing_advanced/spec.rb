@@ -17,10 +17,6 @@ module Checker
           'Temple University (Rome campus)' => 3.5
         )
       end
-    end
-
-    context 'when parse big csv file' do
-      let(:file_name) { Rails.root.join('lib/checkers/csv_processing_advanced/short.csv') }
 
       it 'works in the most efficient way' do
         RubyProf::FlatPrinter.new(
