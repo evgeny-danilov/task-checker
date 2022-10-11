@@ -2,51 +2,27 @@
 
 class File2
 
-  InvalidFileError = Class.new(StandardError)
-
-  def initialize(file_name)
-    check_file!(file_name)
-
-    File.new(file_name)
-  end
+  InvalidFilePathError = Class.new(StandardError)
 
   class << self
-    def open(file_name)
-      check_file!(file_name)
+    AVAILABLE_METHODS = %i(new open read foreach readlines).freeze
 
-      File.open(file_name)
+    AVAILABLE_METHODS.each do |method_name|
+      define_method(method_name) do |file_name, options = {}, &block|
+        validate_file_path!(file_name)
+
+        File.send(method_name, file_name, **options, &block)
+      end
     end
 
-    def foreach(file_name)
-      check_file!(file_name)
+    private
 
-      File.foreach(file_name)
+    def validate_file_path!(file_name)
+      checkers_path = ::CheckController::CHECKERS_PATH.to_s
+      return if File.expand_path(file_name).start_with?(checkers_path)
+
+      raise InvalidFilePathError, 'Please, use only files in ' + checkers_path
     end
-
-    def each(file_name)
-      check_file!(file_name)
-
-      File.each(file_name)
-    end
-
-    def readlines(file_name)
-      check_file!(file_name)
-
-      File.readlines(file_name)
-    end
-  end
-
-  private
-
-  def self.check_file!(file_name)
-    checkers_path = ::CheckController::CHECKERS_PATH.to_s
-    return if File.expand_path(file_name).start_with?(checkers_path)
-
-    raise InvalidFileError, 'Please, use only files in ' + checkers_path
-  end
-
-  def check_file!(file_name)
-    self.class.check_file!(file_name)
   end
 
 end

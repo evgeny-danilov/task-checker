@@ -12,20 +12,25 @@ module Checker
 
       it 'returns the valid result' do
         expect(subject.call).to include(
-          'American University of Antigua' => 9.09,
+          'American College of Thessaloniki (ACT)' => 4.69,
           'Schiller International University' => 3.63,
-          'Temple University (Rome campus)' => 3.5
+          'Temple University (Japan campus)' => 7.04
         )
       end
 
       it 'works in the most efficient way' do
-        RubyProf::FlatPrinter.new(
-          RubyProf.profile(measure_mode: RubyProf::ALLOCATIONS) { subject.call }
-        ).print(profiling = String.new)
-        allocations = profiling.scan(/Total: (.+)/).flatten.first.to_i
+        allocations = evaluate_allocations(RubyProf::ALLOCATIONS) { subject.call }
 
         expect(allocations).to be < 1800
       end
+    end
+
+    def evaluate_allocations(measure_mode, &block)
+      RubyProf::FlatPrinter.new(
+        RubyProf.profile(measure_mode: measure_mode, &block)
+      ).print(profiling = String.new)
+
+      profiling.scan(/Total: (.+)/).flatten.first.to_i.tap { print "=== #{_1}" }
     end
 
   end

@@ -228,6 +228,7 @@ GEM
       sprockets (>= 3.0.0)
     sqlite3 (1.5.0-arm64-darwin)
     sqlite3 (1.5.0-x86_64-linux)
+    stackprof (0.2.21)
     stimulus-rails (1.1.0)
       railties (>= 6.0.0)
     strscan (3.0.4)
@@ -276,6 +277,7 @@ DEPENDENCIES
   simple_form
   sprockets-rails
   sqlite3 (~> 1.4)
+  stackprof
   stimulus-rails
   turbo-rails
   tzinfo-data

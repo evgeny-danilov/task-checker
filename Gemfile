@@ -16,6 +16,7 @@ gem 'get_process_mem'
 gem 'benchmark'
 gem 'benchmark-ips'
 gem 'ruby-prof'
+gem 'stackprof'
 
 gem "sprockets-rails"
 gem "importmap-rails"

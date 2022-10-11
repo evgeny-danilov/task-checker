@@ -1,12 +1,17 @@
 %h4= params[:id].humanize
 
+%pre{ style: "background-color: white; padding: 8px; border: gray solid 1px;" }
+  = @description.join('<br>').html_safe
+
+%br
+
 .row
   .col-6
     = turbo_frame_tag 'show_test' do
       = render 'check/show_test'
   .col-6
     .form-group
-      .label Test content
+      .label Test specs
       .form-control{ style: "background-color: antiquewhite;" }
         %pre
           = @test_content

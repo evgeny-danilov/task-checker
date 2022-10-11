@@ -1,0 +1,11 @@
+description:
+  - "Given the CSV file:"
+  -
+  - id,  firstname, lastname, email,        score, date_of_birth, university
+  - 1,   Blake,     Shelba,   one@mail.com, 10.81, 1991-01-10,    American University of Antigua
+  - 2,   Fina,      Lissi,    two@mail.com, 9.37,  1928-10-21,    American InterContinental University
+  - ...
+  - 999, Joy,       Chem,     six@mail.com, 7.36,  2018-07-14,    American University in Bosnia and Herzegovina
+  -
+  - Find the average score across all records. Check specs for details.
+
