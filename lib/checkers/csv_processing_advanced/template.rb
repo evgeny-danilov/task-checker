@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CsvParser
+class CsvParserAdvanced
 
   def initialize(file_name:)
     @file_name = file_name

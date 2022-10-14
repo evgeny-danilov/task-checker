@@ -2,14 +2,20 @@ class CheckController < ApplicationController
   CHECKERS_PATH = Rails.root.join('lib/checkers') # TODO: move to global constants
 
   def index
-    @tasks = Dir.entries(CHECKERS_PATH).reject { _1.start_with?('.') }.sort
+    @tasks = Dir.entries(CHECKERS_PATH).filter_map do |task_name|
+      next if task_name.starts_with?('.')
+      meta_path = File.join(CHECKERS_PATH, task_name, 'meta.yml')
+      next if File.exists?(meta_path) && YAML.load(File.read(meta_path)).fetch('public') == false
+
+      task_name
+    end.sort
   end
 
   def show
     @test_content = File.read(task_path)[/RSpec.+/m]
     @template = params[:template] || File.read(template_path)
+    @description = YAML.load(File.read(meta_path)).fetch('description') if File.exists?(meta_path)
     @error_message = params[:error_message]
-    @description = YAML.load(File.read(meta_path)).fetch('description')
   end
 
   def evaluate

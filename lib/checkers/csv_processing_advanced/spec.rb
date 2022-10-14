@@ -4,7 +4,7 @@ require 'rails_helper'
 require_relative 'template'
 
 module Checker
-  RSpec.describe CsvParser do
+  RSpec.describe CsvParserAdvanced do
     subject { described_class.new(file_name: file_name) }
 
     context 'when process csv file' do
