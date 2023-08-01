@@ -9,4 +9,8 @@ description:
   - 999, Joy,       Chem,     six@mail.com, 7.36,  2018-07-14,    American University in Bosnia and Herzegovina
   -
   - Find the average score across all records. Check specs for details.
+  -
+  - ---
+  - We can use Ruby Structs, CSV standard library, or gem 'smarter_csv'
+  - https://rubyandrails.info/books/mastering-csv-in-ruby
 

@@ -11,11 +11,12 @@ gem 'awesome_print'
 gem 'rspec-rails'
 gem 'factory_bot'
 gem 'byebug'
+gem 'shale'
 
 gem 'get_process_mem'
 gem 'benchmark'
 gem 'benchmark-ips'
-gem 'ruby-prof'
+gem 'ruby-prof', '1.4.3'
 gem 'stackprof'
 
 gem "sprockets-rails"

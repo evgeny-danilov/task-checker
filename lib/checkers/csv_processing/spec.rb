@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-require_relative 'template'
+# require_relative 'template'
+require_relative 'template_shale'
+# require_relative 'template_fun'
 
 module Checker
   RSpec.describe CsvParser do

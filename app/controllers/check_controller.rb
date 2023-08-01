@@ -5,6 +5,7 @@ class CheckController < ApplicationController
     @tasks = Dir.entries(CHECKERS_PATH).filter_map do |task_name|
       next if task_name.starts_with?('.')
       meta_path = File.join(CHECKERS_PATH, task_name, 'meta.yml')
+
       next if File.exists?(meta_path) && YAML.load(File.read(meta_path)).fetch('public') == false
 
       task_name
